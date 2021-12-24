@@ -1,0 +1,109 @@
+
+.about{
+    margin: auto 40%;
+    font-size: 50px;
+    
+}
+.About-cont{
+    display:flex;
+    flex-direction:row;
+    
+}
+.backpack_girl,.boyWithBlueBackground{
+    margin:90px;
+    width:30%;
+ justify-content: flex-start;
+}
+.About-text{
+    width: 50%;
+    margin-top: 10%;
+
+}
+.About-cont-left{
+    display:flex;
+    flex-direction:row-reverse;  
+}
+.About-In-Card{
+    border: 1px solid var(--black);
+    padding: 5%;
+    margin: 5%;
+
+}
+.About-In-Card:hover{
+    background-color:var(--teal);
+    color:var(--white);
+}
+
+.About-Approach{
+    margin: auto 35%;
+    padding: 20px;
+    text-align: center; 
+}
+.About-container{
+    display: flex;
+    align-items: center;
+    padding: 50px 50px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+.About-Card{ 
+    padding: 15px;}
+    
+@media only screen and (max-width: 768px) {
+    .about{
+        font-size:30px ;
+        
+    }    
+    .About-cont{
+        align-items: center;
+        justify-content: center;
+    }    
+    .About-cont-left{
+        align-items: center;
+        justify-content: center; 
+        margin-left: 40px;
+    }
+    .About-container{
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+       padding: 20px;
+       
+    
+    }
+  
+    .About-Card{flex:auto; 
+        padding: 10px;}
+}
+
+@media only screen and (max-width: 450px) {
+    .about{
+        font-size:20px ;
+        font-weight: bold;
+    }
+    .About-cont,.About-cont-left{
+        flex-direction:column;
+        padding:10px auto;
+    }
+    .backpack_girl,.boyWithBlueBackground{
+        width: 50%;
+        margin:0;
+    }
+    .About-container{
+        flex-direction: column;
+    }
+    .About-Approach h1{font-size: 16px; 
+    font-weight: bold;}
+    .About-text h1{font-size: 25px;}
+}
+@media only screen and (max-width: 375px){ 
+    .about{
+        font-size:15px ;    
+    }
+    .About-text h1 { font-size: 15px;}
+    .About-Approach h1{font-size: 13px; }
+    .About-Card{
+    margin-right: 5px;
+}
+}
