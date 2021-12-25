@@ -1,0 +1,57 @@
+.landingHowToStartMainContainer {
+  margin: 3em auto;
+}
+.landingHowToStartMainContainer .howToStartHeading h2 {
+  font-weight: 800;
+}
+.landingHowToStartMainContainer .howToStartHeading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.landingHowToStartMainContainer .guidContainer {
+  width: 90%;
+  margin: auto;
+  background-color: var(--white);
+}
+.landingHowToStartMainContainer .guidContainer .oneGuidStepContainer {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.219);
+}
+.landingHowToStartMainContainer
+  .guidContainer
+  .oneGuidStepContainer
+  .imageContainer
+  img {
+  width: 100%;
+}
+.landingHowToStartMainContainer .guidContainer .oneGuidStepContainer .num {
+  background-color: #242935e0;
+  color: var(--white);
+  text-align: center;
+  margin: auto;
+  width: 40px;
+  padding: 10px 15px;
+  border-radius: 50px;
+}
+.landingHowToStartMainContainer
+  .guidContainer
+  .oneGuidStepContainer
+  .textArea
+  p {
+  max-width: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  .landingHowToStartMainContainer .guidContainer .oneGuidStepContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .landingHowToStartMainContainer .guidContainer .oneGuidStepContainer * {
+    margin: 10px auto;
+  }
+}

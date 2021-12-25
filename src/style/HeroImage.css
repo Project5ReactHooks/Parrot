@@ -1,0 +1,59 @@
+.heroImageContainer {
+  min-width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://static.preply.com/static/ssr/_next/static/images/tutor-1600-000ab8ac339c24bd121c6338f104daf8.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.heroImageContainer .actionArea {
+  background-color: rgba(0, 225, 255, 0.116);
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: white;
+  padding-left: 15%;
+  font-size: 1.5em;
+}
+.heroImageContainer .actionArea p {
+  max-width: 50%;
+}
+.heroImageContainer .actionArea h2 {
+  font-size: 1.6em;
+  padding: 7px 0;
+}
+.heroImageContainer .actionArea button {
+  background-color: var(--teal);
+  padding: 5px 15px;
+  border-radius: 15px;
+  border: none;
+  transition: 0.3s ease;
+  font-size: 0.9em;
+  color: white;
+}
+.heroImageContainer .actionArea button:hover {
+  background-color: var(--navyBlue);
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: none;
+}
+@media screen and (max-width:1000px){
+  .heroImageContainer .actionArea{
+    padding-left:0;
+    text-align: center;
+  }
+  .heroImageContainer .actionArea p{
+    max-width: 100%;
+
+  }
+  .heroImageContainer .actionArea p, .heroImageContainer .actionArea h2,.heroImageContainer .actionArea button{
+    margin: 10px auto;
+  }
+ 
+}

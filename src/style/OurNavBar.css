@@ -1,0 +1,31 @@
+.navMainContainer{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    background-color: var(--white);
+    position: sticky;
+    top:0;
+    width: 100%;
+    box-shadow: 0px 1px 5px rgba(128, 128, 128, 0.5);
+}
+.navMainContainer .logoContainer{
+    text-align: center;
+    color: var(--navyBlue);
+}
+.navMainContainer .pagesLinks{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+}
+.navMainContainer .pagesLinks *{
+    text-decoration: none;
+    list-style: none;
+    color: var(--teal);
+}
+.navMainContainer .pagesLinks *:hover{
+    color: var(--navyBlue);
+}
+.navMainContainer .pagesLinks ul{
+    display: flex;
+    margin: 0;
+    justify-content: space-evenly;
+}

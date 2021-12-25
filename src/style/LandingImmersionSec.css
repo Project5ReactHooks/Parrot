@@ -1,0 +1,68 @@
+.ImmersionSecContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--white);
+}
+.ImmersionSecContainer .imageContainer img {
+  width: 100%;
+}
+.ImmersionSecContainer .textArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1.2em;
+}
+.ImmersionSecContainer .textArea button {
+  background-color: var(--teal);
+  padding: 5px 15px;
+  border-radius: 15px;
+  border: none;
+  transition: 0.3s ease;
+  font-size: 0.9em;
+  color: white;
+}
+.ImmersionSecContainer .textArea p {
+  max-width: 70%;
+}
+.ImmersionSecContainer .textArea h2 {
+  font-weight: 800;
+}
+.ImmersionSecContainer .textArea button:hover {
+  background-color: var(--navyBlue);
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: none;
+}
+.ImmersionSecContainer > * {
+  margin: 15px;
+  padding: 1.5em;
+}
+.ImmersionSecContainer .textArea > * {
+  margin: 10px 0;
+}
+@media screen and (max-width: 1000px) {
+  .ImmersionSecContainer {
+    grid-template-columns: 1fr;
+  }
+  .ImmersionSecContainer > * {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+  }
+  .ImmersionSecContainer .textArea {
+    background-color: #f8f8ffe6;
+  }
+  .ImmersionSecContainer .textArea > * {
+    margin: 10px auto;
+  }
+  .ImmersionSecContainer .imageContainer img {
+    width: 100%;
+    height: 100%;
+  }
+  .ImmersionSecContainer .textArea p {
+    max-width: 95%;
+}
+}
