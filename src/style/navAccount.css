@@ -6,6 +6,7 @@
 .account {
   width: 70%;
   margin: 3em auto;
+  min-height: 50vh;
 }
 .navBarAccount {
   margin-top: 2em;

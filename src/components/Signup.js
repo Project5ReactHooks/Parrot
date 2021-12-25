@@ -1,8 +1,11 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../App";
 import "../style/Signup.css";
 
 function Signup() {
+  let navigate = useNavigate();
+
   const {
     setLogged,
     userSignupInformation,
@@ -21,14 +24,14 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const { email, username, password, repeatPassword } = e.target;
+    const { email, username, password, repeatPassword ,img} = e.target;
     let data = {
       id: Math.random() * 100,
       username: username.value,
       email: email.value,
       password: password.value,
       repeatPassword: repeatPassword.value,
+      img:img.value
     };
     let updatedData = [];
     updatedData = JSON.parse(localStorage.getItem("user"))
@@ -44,17 +47,24 @@ function Signup() {
     } else {
       updatedData.push(data);
       localStorage.setItem("user", JSON.stringify(updatedData));
+      localStorage.setItem("isLoggedIn",JSON.stringify(true))
 
-      sessionStorage.setItem(
+
+      localStorage.setItem(
         "loggedAccount",
         JSON.stringify({
           email: userSignupInformation.email,
           username: userSignupInformation.username,
+          id:userSignupInformation.id,
+          password:userSignupInformation.password,
+          img:userSignupInformation.img
         })
       );
       setSubmitted(true);
       setLogged(true);
+      navigate("/")
     }
+    
   };
 
   return (
@@ -123,6 +133,16 @@ function Signup() {
             <span style={{ color: "red" }}>not match </span>
           ) : null}
 
+          <label>Image URL</label>
+          <input
+              className="registration-input"
+              id="5"
+              name="img"
+              type="text"
+              value={userSignupInformation.img}
+              onChange={handleChange}
+              required
+            />
           <button type="submit" className="Signup-btn">
             submit
           </button>
