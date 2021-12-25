@@ -4,8 +4,8 @@ import BookingCardInfo from "../components/BookingCardInfo";
 export const BookingContext = createContext();
 
 function Booking() {
-  const [date, setDate] = useState();
-  const [time, setTime] = useState();
+  const [date, setDate] = useState("empty");
+  const [time, setTime] = useState("01:00-02:00");
   return (
     <div>
       <div className="booking-head">

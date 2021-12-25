@@ -16,7 +16,7 @@ function BookingCardInfo() {
     {
       id: 2,
       tutorImg: "tutor2.jpg",
-      tutorName: "Brad",
+      tutorName: "Rahaf",
       tutorExp: 8,
       tutorDes:
         "Hello!my hobbies are drawing ,playing video games and I really love teaching :)",
@@ -25,7 +25,7 @@ function BookingCardInfo() {
     {
       id: 3,
       tutorImg: "tutor7.jpg",
-      tutorName: "Victoria",
+      tutorName: "Azooz",
       tutorExp: 10,
       tutorDes:
         "Hello!my hobbies are drawing ,playing video games and I really love teaching :)",
@@ -70,13 +70,15 @@ function BookingCardInfo() {
     {
       id: 8,
       tutorImg: "tutor1.jpg",
-      tutorName: "Jane",
+      tutorName: "Yaser",
       tutorExp: 7,
       tutorDes:
         "Hello!my hobbies are drawing ,playing video games and I really love teaching :)",
       tutorPrice: 50,
     },
   ]);
+  const bookedArrFromStorage=(localStorage.getItem("bookingDetails")?JSON.parse(localStorage.getItem("bookingDetails")):"TEST");
+
   return (
     <div className="container">
       {booking.map((item) => {
