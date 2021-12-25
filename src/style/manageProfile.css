@@ -1,0 +1,57 @@
+.manageProfile {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3em;
+}
+.profileImage {
+  width: 80%;
+  height: 26em;
+  border-radius: 50px;
+}
+.personalInformation {
+  width: 70%;
+}
+.accountDiv {
+  margin-bottom: 1.2em;
+}
+.profileInput {
+  width: 100%;
+  height: 7vh;
+  border-radius: 5px;
+  border: solid 1px rgb(209, 204, 204);
+  padding: 1em;
+}
+.profileLabel {
+  margin-bottom: 0.3em;
+}
+.profileBtn {
+  padding: 0.5em;
+  border-radius: 10px;
+  background-color: var(--teal);
+  color: var(--white);
+  border: none;
+}
+@media screen and (max-width: 800px) {
+  .manageProfile {
+    flex-direction: column;
+    margin: 1em;
+  }
+  .profileImage {
+    width: 180px;
+    height: 11em;
+  }
+  .profileImage1 {
+    margin: 0 auto 2em;
+  }
+  .profileBtn1 {
+    display: flex;
+    justify-content: center;
+  }
+  .personalInformation {
+    margin: auto;
+  }
+  .accountTitle {
+    display: flex;
+    justify-content: center;
+  }
+}

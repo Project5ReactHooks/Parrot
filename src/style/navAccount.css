@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.account {
+  width: 70%;
+  margin: 3em auto;
+}
+.navBarAccount {
+  margin-top: 2em;
+}
+.navAccount {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+}
+.linkAccount {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 1.2em;
+  padding: 0.5em;
+}
+.linkAccount:hover {
+  color: var(--teal);
+}
+@media screen and (max-width: 800px) {
+  .account {
+    width: 100%;
+  }
+  .navBarAccount {
+    display: flex;
+    justify-content: center;
+  }
+}
