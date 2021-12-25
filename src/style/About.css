@@ -1,27 +1,30 @@
 
 .about{
-    margin: auto 40%;
+    margin: 3% 40% ;
     font-size: 50px;
     
 }
 .About-cont{
     display:flex;
-    flex-direction:row;
-    
+
 }
 .backpack_girl,.boyWithBlueBackground{
-    margin:90px;
-    width:30%;
- justify-content: flex-start;
+    margin:50px;
+    width:20%;
+}
+.About-text span ,.about span , .About-Approach  span{
+    color: var(--teal);
 }
 .About-text{
-    width: 50%;
-    margin-top: 10%;
+    width: 70%;
+    margin-top: 8%;
 
 }
 .About-cont-left{
     display:flex;
-    flex-direction:row-reverse;  
+    flex-direction:row-reverse;
+    background-color: var(--teal);
+
 }
 .About-In-Card{
     border: 1px solid var(--black);
@@ -53,57 +56,41 @@
 @media only screen and (max-width: 768px) {
     .about{
         font-size:30px ;
+    }    
         
-    }    
-    .About-cont{
-        align-items: center;
-        justify-content: center;
-    }    
-    .About-cont-left{
-        align-items: center;
-        justify-content: center; 
-        margin-left: 40px;
-    }
-    .About-container{
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-       padding: 20px;
-       
-    
-    }
-  
-    .About-Card{flex:auto; 
-        padding: 10px;}
+    .About-text  { font-size: 12px;}
+    .About-Approach {font-size: 12px; }
+
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 615px) {
     .about{
         font-size:20px ;
-        font-weight: bold;
+       
     }
     .About-cont,.About-cont-left{
+        align-items: center;
         flex-direction:column;
         padding:10px auto;
     }
     .backpack_girl,.boyWithBlueBackground{
         width: 50%;
-        margin:0;
+        margin: auto;
     }
-    .About-container{
-        flex-direction: column;
-    }
+   
     .About-Approach h1{font-size: 16px; 
     font-weight: bold;}
     .About-text h1{font-size: 25px;}
+    .About-Approach {font-size: 12px; }
 }
+
 @media only screen and (max-width: 375px){ 
     .about{
         font-size:15px ;    
     }
+    .About-container{margin-top: auto;}
     .About-text h1 { font-size: 15px;}
-    .About-Approach h1{font-size: 13px; }
-    .About-Card{
-    margin-right: 5px;
-}
+    .About-Approach h1{font-size: 20px; margin-top: 10px; }
+    .About-Approach{padding:0px;}
+    
 }
