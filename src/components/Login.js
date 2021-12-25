@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { UserContext } from "../App";
 import "../style/Login.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  let navigate = useNavigate();
   const { setLogged, userLoginInformation, setUserLoginInformation } =
     useContext(UserContext);
 
@@ -36,14 +38,20 @@ function Login() {
 
     if (check) {
       setLogged(true);
+      localStorage.setItem("isLoggedIn",JSON.stringify(true))
 
-      sessionStorage.setItem(
+      localStorage.setItem(
         "loggedAccount",
         JSON.stringify({
           email: checkUser[0].email,
           username: checkUser[0].username,
+          id:checkUser[0].id,
+          password:checkUser[0].password,
+          img:checkUser[0].img
+          
         })
       );
+      navigate("/")
     } else {
       alert("incorrect email or password ");
     }

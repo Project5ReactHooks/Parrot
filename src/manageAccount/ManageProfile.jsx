@@ -1,17 +1,19 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../style/manageProfile.css";
 
 const ManageProfile = () => {
+  let navigate = useNavigate();
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    let user = JSON.parse(localStorage.getItem("user"));
+    let user = JSON.parse(localStorage.getItem("loggedAccount"));
     setUser(user);
   }, []);
   const handelUserName = (e) => {
     let newUser = user;
-    newUser.userName = e.target.value;
+    newUser.username = e.target.value;
     setUser({ ...newUser });
   };
   const handelPassword = (e) => {
@@ -27,22 +29,37 @@ const ManageProfile = () => {
 
   const updateUser = (e) => {
     e.preventDefault()
-    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("loggedAccount", JSON.stringify(user));
+    let users =JSON.parse(localStorage.getItem('user'))
+    users.map((e)=>{
+      if(e.email == user.email){
+        e.password = user.password
+        e.username = user.username  
+        e.img = user.img
+      }
+    }
+    );
+     localStorage.setItem('user' ,JSON.stringify(users))
   };
+  const logOut = ()=>{
+ localStorage.setItem("isLoggedIn" , (false))
+ localStorage.setItem("loggedAccount", '')
+ navigate("/")
+  }
   return (
     <section className="manageProfile">
       <div className="profileImage1">
         <img src={user.img} className="profileImage" />
       </div>
       <div className="personalInformation">
-        <form onSubmit={updateUser}>
+        <form>
           <div className="accountDiv">
             <label className='profileLabel'>UserName</label>
             <br />
             <input
               className="profileInput"
               type="text"
-              value={user.userName}
+              value={user.username}
               onChange={(event) => handelUserName(event)}
             />
           </div>
@@ -78,7 +95,8 @@ const ManageProfile = () => {
           </div>
 
           <div className="profileBtn1">
-            <button className='profileBtn'>Submit</button>
+            <button className='profileBtn' onClick={updateUser}>Submit</button>
+            <button className="logOut" onClick={logOut}>Log out</button>
           </div>
         </form>
       </div>
