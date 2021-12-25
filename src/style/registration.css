@@ -1,0 +1,16 @@
+.Registration-App {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0% auto;
+}
+
+@media (max-width: 900px) {
+  .Registration-App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0% auto;
+  }
+}
