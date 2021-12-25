@@ -12,7 +12,7 @@ const Account = () => {
       <div className="navBarAccount">
         <ul className="navAccount">
           <li>
-            <Link to="/account/test" className="linkAccount">
+            <Link to="/account" className="linkAccount">
               Profile
             </Link>
           </li>

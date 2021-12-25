@@ -28,7 +28,6 @@ function App() {
     loginEmail: "",
     loginPassword: "",
   });
-
   const [submitted, setSubmitted] = useState(false);
   const [logged, setLogged] = useState(false);
   return (
@@ -47,19 +46,19 @@ function App() {
           }}
         >
           {/* <Registration /> */}
-          <OurNavBar />
+          <OurNavBar isLoggedIn={logged}/>
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/findtutor" element={<Booking />} />
             <Route path="/about" element={<About />} />
             <Route path="account" element={<Account />}>
-              <Route path="test" element={<ManageProfile />} />
+              <Route path="/account" element={<ManageProfile />} />
               <Route
                 path="ManageReservations"
                 element={<ManageReservations />}
               />
             </Route>
-            <Route path="/login" element={<Registration />} />
+            <Route path="/login" element={<Registration/>} />
           </Routes>
           <Footer />
         </UserContext.Provider>
