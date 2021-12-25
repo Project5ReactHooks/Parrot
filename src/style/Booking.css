@@ -1,0 +1,70 @@
+.Booking-Card{
+    color: var(--black);
+}
+.booking-head{
+    text-align: center;
+    background-color: #bbe9eb;
+    padding: 2rem;
+    margin-bottom: 4rem;
+}
+.booking-card{
+ display: flex;
+ justify-content:space-between;
+ box-shadow:0 0 20px rgb(0 0 0 / 10%);
+ border-radius: 1em;
+ width: 100%;
+ margin: auto;
+ padding:1.5em 2em;
+}
+.booking-img{
+    width: 30%;
+}
+.booking-tutor-desc{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.booking-tutor-desc p{
+    color: #6f757b;
+}
+.booking-price{
+    width: 25%;
+   text-align: center;
+}
+.booking-img img{
+  width: 70%;
+  height: 100%;
+}
+
+.booking-price >p{
+    color: #6f757b;
+}
+.booking-price button{
+    background-color: var(--teal);
+    border: none;
+    border-radius: 0.5em;
+    padding:0.5em 2em;
+    color: var(--white);
+    font-weight: bold;
+    width: 100%;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:1.5em;
+}
+.date-time{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0.5em;
+}
+#date,#time{
+ width: 40%;
+ border:1px solid var(--teal);
+ border-radius: 0.5em;
+ padding:0.5em 1.5em;
+}
+
