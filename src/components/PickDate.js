@@ -1,5 +1,5 @@
+import React, { useContext, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import React, { useContext } from "react";
 import { BookingContext } from "../pages/Booking";
 function MyVerticallyCenteredModal(props) {
   const { date, setDate } = useContext(BookingContext);
@@ -40,13 +40,13 @@ function MyVerticallyCenteredModal(props) {
           {/* {test.date.includes(date) && test.times.includes(time) ? (
             <option value="01:00-02:00">01:00-02:00</option>
           ) : ( */}
-            <>
-              <option value="01:00-02:00">01:00-02:00</option>
-              <option value="02:00-03:00">02:00-03:00</option>
-              <option value="03:00-04:00">03:00-04:00</option>
-              <option value="04:00-05:00">04:00-05:00</option>
-              <option value="05:00-06:00">05:00-06:00</option>
-            </>
+          <>
+            <option value="01:00-02:00">01:00-02:00</option>
+            <option value="02:00-03:00">02:00-03:00</option>
+            <option value="03:00-04:00">03:00-04:00</option>
+            <option value="04:00-05:00">04:00-05:00</option>
+            <option value="05:00-06:00">05:00-06:00</option>
+          </>
           {/* )} */}
           {/* <option value="01:00-02:00">01:00-02:00</option>
           <option value="02:00-03:00">02:00-03:00</option>
