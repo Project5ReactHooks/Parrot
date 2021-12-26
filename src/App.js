@@ -1,6 +1,7 @@
 import React from "react";
-import "./style/App.css";
+import { useState, createContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./style/App.css";
 import ManageProfile from "./manageAccount/ManageProfile";
 import ManageReservations from "./manageAccount/ManageReservations";
 import LandingPage from "./pages/LandingPage";
@@ -10,9 +11,8 @@ import Registration from "./pages/Registration";
 import Booking from "./pages/Booking";
 import About from "./pages/About";
 import Account from "./manageAccount/Account";
-
-import { useState, createContext } from "react";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 export const UserContext = createContext();
 
 function App() {
@@ -46,7 +46,8 @@ function App() {
           }}
         >
           {/* <Registration /> */}
-          <OurNavBar isLoggedIn={logged}/>
+          <OurNavBar isLoggedIn={logged} />
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/findtutor" element={<Booking />} />
@@ -58,7 +59,7 @@ function App() {
                 element={<ManageReservations />}
               />
             </Route>
-            <Route path="/login" element={<Registration/>} />
+            <Route path="/login" element={<Registration />} />
           </Routes>
           <Footer />
         </UserContext.Provider>
