@@ -1,8 +1,10 @@
 .Registration-App {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   margin: 0% auto;
+  background-color: var(--white);
 }
 
 @media (max-width: 900px) {
@@ -13,4 +15,50 @@
     align-items: center;
     margin: 0% auto;
   }
+}
+
+.sendConsult-btn-color {
+  background-color: var(--teal) !important;
+}
+.heading-sendconsult {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.signup-img {
+  width: 40%;
+  height: 80%;
+}
+
+.login-img {
+  width: 30%;
+  height: 30%;
+  flex-shrink: 1;
+}
+
+.login-App {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0% auto;
+  background-color: var(--white);
+}
+
+@media (max-width: 1000px) {
+  .login-img {
+    display: none;
+  }
+  .signup-img {
+    display: none;
+  }
+}
+.btn-consult {
+  margin: auto;
+}
+
+.heading-div {
+  text-align: center;
+  margin-bottom: 2rem;
 }

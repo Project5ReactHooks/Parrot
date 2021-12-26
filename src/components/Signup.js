@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../App";
 import "../style/Signup.css";
 
-function Signup() {
+function Signup(props) {
   let navigate = useNavigate();
 
   const {
@@ -24,14 +24,14 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { email, username, password, repeatPassword ,img} = e.target;
+    const { email, username, password, repeatPassword, img } = e.target;
     let data = {
       id: Math.random() * 100,
       username: username.value,
       email: email.value,
       password: password.value,
       repeatPassword: repeatPassword.value,
-      img:img.value
+      img: img.value,
     };
     let updatedData = [];
     updatedData = JSON.parse(localStorage.getItem("user"))
@@ -47,24 +47,22 @@ function Signup() {
     } else {
       updatedData.push(data);
       localStorage.setItem("user", JSON.stringify(updatedData));
-      localStorage.setItem("isLoggedIn",JSON.stringify(true))
-
+      localStorage.setItem("isLoggedIn", JSON.stringify(true));
 
       localStorage.setItem(
         "loggedAccount",
         JSON.stringify({
           email: userSignupInformation.email,
           username: userSignupInformation.username,
-          id:userSignupInformation.id,
-          password:userSignupInformation.password,
-          img:userSignupInformation.img
+          id: userSignupInformation.id,
+          password: userSignupInformation.password,
+          img: userSignupInformation.img,
         })
       );
       setSubmitted(true);
       setLogged(true);
-      navigate("/")
+      navigate("/");
     }
-    
   };
 
   return (
@@ -72,7 +70,7 @@ function Signup() {
       <form className="form-Signup" onSubmit={handleSubmit}>
         <fieldset className="signup-field">
           <legend>Registration</legend>
-          <label htmlFor="username">
+          <label htmlFor="1">
             Username
             <input
               className="registration-input"
@@ -84,7 +82,7 @@ function Signup() {
               required
             />
           </label>
-          <label htmlFor="email">
+          <label htmlFor="2">
             Email
             <input
               className="registration-input"
@@ -97,9 +95,11 @@ function Signup() {
             />
           </label>
           {userSignupInformation.email === "" ? (
-            <span style={{ color: "red" }}>please enter your email </span>
+            <span style={{ color: "red", fontSize: "10px" }}>
+              please enter your email{" "}
+            </span>
           ) : null}
-          <label htmlFor="password">
+          <label htmlFor="3">
             Password
             <input
               className="registration-input"
@@ -114,7 +114,9 @@ function Signup() {
 
           {userSignupInformation.password.length < 6 &&
           userSignupInformation.password === "" ? (
-            <span style={{ color: "red" }}>Please enter your password</span>
+            <span style={{ color: "red", fontSize: "10px" }}>
+              Please enter your password
+            </span>
           ) : null}
           <label htmlFor="repeatPassword">
             Repeat-password
@@ -135,14 +137,22 @@ function Signup() {
 
           <label>Image URL</label>
           <input
-              className="registration-input"
-              id="5"
-              name="img"
-              type="text"
-              value={userSignupInformation.img}
-              onChange={handleChange}
-              required
-            />
+            className="registration-input"
+            id="5"
+            name="img"
+            type="text"
+            value={userSignupInformation.img}
+            onChange={handleChange}
+          />
+          <p className="Login-p">
+            Already have an account?
+            <span
+              onClick={() => props.setlogin_register(!props.login_register)}
+              className="login-link"
+            >
+              Login
+            </span>
+          </p>
           <button type="submit" className="Signup-btn">
             submit
           </button>

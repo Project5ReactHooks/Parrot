@@ -3,7 +3,7 @@ import { UserContext } from "../App";
 import "../style/Login.css";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Login(props) {
   let navigate = useNavigate();
   const { setLogged, userLoginInformation, setUserLoginInformation } =
     useContext(UserContext);
@@ -38,20 +38,19 @@ function Login() {
 
     if (check) {
       setLogged(true);
-      localStorage.setItem("isLoggedIn",JSON.stringify(true))
+      localStorage.setItem("isLoggedIn", JSON.stringify(true));
 
       localStorage.setItem(
         "loggedAccount",
         JSON.stringify({
           email: checkUser[0].email,
           username: checkUser[0].username,
-          id:checkUser[0].id,
-          password:checkUser[0].password,
-          img:checkUser[0].img
-          
+          id: checkUser[0].id,
+          password: checkUser[0].password,
+          img: checkUser[0].img,
         })
       );
-      navigate("/")
+      navigate("/");
     } else {
       alert("incorrect email or password ");
     }
@@ -69,23 +68,30 @@ function Login() {
               type="email"
               value={userLoginInformation.loginEmail}
               onChange={handleChange}
-              placeholder="Enter your email"
               required
             />
           </label>
           <label>
-            password
+            Password
             <input
               className="registration-input"
               name="loginPassword"
               type="password"
               value={userLoginInformation.loginPassword}
               onChange={handleChange}
-              placeholder="Enter your password"
               required
             />
           </label>
-          <button className="login-btn">submit</button>
+          <p className="Signup-p">
+            Don't have an account?
+            <span
+              onClick={() => props.setlogin_register(!props.login_register)}
+              className="Signup-link"
+            >
+              Signup
+            </span>
+          </p>
+          <button className="login-btn">Login</button>
         </fieldset>
       </form>
     </div>
