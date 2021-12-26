@@ -1,11 +1,12 @@
 import React from "react";
 import "../style/LandingImmersionSec.css";
+import { Link } from "react-router-dom";
 function LandingImmersionSec() {
   return (
     <div className="ImmersionSecContainer">
       <div className="imageContainer">
         <img
-          src="https://www.cambly.com/fe/static/landing_page/chat.webp"
+          src="chat2.png"
           alt="web chat"
         />
       </div>
@@ -16,7 +17,7 @@ function LandingImmersionSec() {
           with friendly tutors from the US, UK, Australia, and more. All you
           need is your device!
         </p>
-        <button>START LEARNING</button>
+        <Link to="/findtutor"> <button>START LEARNING</button></Link>
       </div>
     </div>
   );

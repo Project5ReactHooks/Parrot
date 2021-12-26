@@ -1,7 +1,7 @@
 .landingContactUsComp {
-  background-color: var(--teal);
+  background-color: var(--white);
   min-height: 50vh;
-  padding: 5em;
+  padding: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,11 +9,16 @@
 div.landingContactUsComp > div > div.contactSecTitle > h2 {
   font-weight: 700;
 }
+.contactTitle {
+  margin-bottom: 1em;
+}
 .landingContactUsComp .mainContainer {
-  background-color: var(--white);
   border-radius: 5px;
   text-align: center;
   padding: 1em;
+}
+.contactContainer {
+  display: flex;
 }
 .landingContactUsComp .mainContainer button {
   background-color: var(--teal);
@@ -47,9 +52,23 @@ div.landingContactUsComp > div > div.contactSecTitle > h2 {
 }
 .landingContactUsComp .mainContainer .contactFormContainer form .inputArea > * {
   border-radius: 5px;
-  border: 2px solid rgba(128, 128, 128, 0.623);
+  border: 1px solid rgba(128, 128, 128, 0.623);
   resize: none;
   padding: 5px;
+}
+.imgContainer {
+  margin-right: 6em;
+}
+.contactImage {
+  width: 30em;
+}
+@media screen and (max-width: 1050px) {
+  .imgContainer {
+    display: none;
+  }
+  .contactContainer {
+    display: inline;
+  }
 }
 @media screen and (max-width: 500px) {
   .landingContactUsComp

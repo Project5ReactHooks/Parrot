@@ -6,8 +6,10 @@ function LandingContactUs() {
     <div className="landingContactUsComp">
       <div className="mainContainer">
         <div className="contactSecTitle">
-          <h2>Get In Touch</h2>
+          <h2 className="contactTitle">Get In Touch</h2>
         </div>
+        <div className="contactContainer">
+        <div className="imgContainer"><img src="contact.svg" className="contactImage"/></div>
         <div className="contactFormContainer">
           <form>
             <div className="inputArea">
@@ -29,6 +31,7 @@ function LandingContactUs() {
             </div>
             <button>Submit</button>
           </form>
+        </div>
         </div>
       </div>
     </div>

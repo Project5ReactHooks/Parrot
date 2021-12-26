@@ -1,5 +1,7 @@
 import React from "react";
 import '../style/HeroImage.css'
+import { Link } from "react-router-dom";
+
 
 function HeroImage() {
   return (
@@ -11,7 +13,7 @@ function HeroImage() {
         Become fluent faster through one-on-one video chat lessons tailored to
         your goals.
       </p>
-      <button>GET STARTED</button>
+      <Link to="/findtutor"><button> GET STARTED</button></Link>
       </div>
     </div>
   );
