@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 const ManageReservations = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    let data = JSON.parse(localStorage.getItem("test"));
+    let data = JSON.parse(localStorage.getItem("usersReservations"));
     setData(data);
   }, []);
 
-  const handelDelete = (reservation) => {
-    let test = JSON.parse(localStorage.getItem("test"));
-    let nweReservation = test.filter((el) => el.id !== reservation.id);
+  const handelDelete = (reservation ,index) => {
+    let test = JSON.parse(localStorage.getItem("usersReservations"));
+    let nweReservation = test.filter((el) => el !== test[index])
     setData(nweReservation);
-    localStorage.setItem("test", JSON.stringify(nweReservation));
+    localStorage.setItem("usersReservations", JSON.stringify(nweReservation));
   };
   return data?.length ? (
     <section>
@@ -21,16 +21,18 @@ const ManageReservations = () => {
         <thead className="reservationTable">
           <th>Name</th>
           <th>Booking Date</th>
+          <th>Booking Time</th>
           <th>Total Price</th>
           <th></th>
         </thead>
         <tbody>
-          {data.map((reservation) => (
+          {data.map((reservation,index) => (
             <tr className="reservationTable2">
-              <td>{reservation.name}</td>
+              <td>{reservation.tutorName}</td>
               <td>{reservation.date}</td>
-              <td>{reservation.price}</td>
-              <td onClick={() => handelDelete(reservation)}>x</td>
+              <td>{reservation.time}</td>
+              <td>{reservation.tutorPrice}</td>
+              <td onClick={() => handelDelete(reservation,index)}>x</td>
             </tr>
           ))}
         </tbody>
