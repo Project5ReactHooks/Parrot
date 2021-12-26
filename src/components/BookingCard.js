@@ -5,14 +5,14 @@ function BookingCard(props) {
   const { date, setDate, time, setTime } = useContext(BookingContext);
   const { id, tutorImg, tutorName, tutorExp, tutorDes, tutorPrice } =
     props.item;
-  let tutorsBookedDetailsFromStorage = localStorage.getItem(
-    "tutorsBookedDetails"
-  )
-    ? JSON.parse(localStorage.getItem("tutorsBookedDetails"))
-    : [];
-  const [tutorsBookedDetails, setTutorsBookedDetails] = useState(
-    tutorsBookedDetailsFromStorage
-  );
+  const [tutorsBookedDetails, setTutorsBookedDetails] = useState([]);
+  useEffect(() => {
+    localStorage.getItem("tutorsBookedDetails")
+      ? setTutorsBookedDetails(
+          JSON.parse(localStorage.getItem("tutorsBookedDetails"))
+        )
+      : localStorage.setItem("tutorsBookedDetails", JSON.stringify([]));
+  }, []);
   const handleBooking = () => {
     let exist = false;
     let existIndex = null;
@@ -61,7 +61,9 @@ function BookingCard(props) {
           date: date,
           times: [time],
         });
+
         setTutorsBookedDetails(newStateArr);
+        console.log(newStateArr);
         localStorage.setItem(
           "tutorsBookedDetails",
           JSON.stringify(newStateArr)
@@ -78,58 +80,33 @@ function BookingCard(props) {
           bookedDates: [{ date: date, times: [time] }],
         },
       ]);
+      let newArrr;
+      if (localStorage.getItem("tutorsBookedDetails")) {
+        let storageData = JSON.parse(
+          localStorage.getItem("tutorsBookedDetails")
+        );
+        newArrr = [
+          ...storageData,
+          {
+            tutorName: tutorName,
+            tutorId: id,
+            tutorPrice: tutorPrice,
+            bookedDates: [{ date: date, times: [time] }],
+          },
+        ];
+        localStorage.setItem("tutorsBookedDetails", JSON.stringify(newArrr));
+      } else {
+        newArrr = [
+          {
+            tutorName: tutorName,
+            tutorId: id,
+            tutorPrice: tutorPrice,
+            bookedDates: [{ date: date, times: [time] }],
+          },
+        ];
+        localStorage.setItem("tutorsBookedDetails", JSON.stringify(newArrr));
+      }
     }
-
-    // let storageBooking = JSON.parse(localStorage.getItem("bookingDetails"));
-    // let found = false,
-    //   index;
-    // if (storageBooking) {
-    //   for (let i = 0; i < storageBooking.length; i++) {
-    //     found = false;
-    //     if (storageBooking[i].id === id) {
-    //       if (
-    //         storageBooking[i].dates == date &&
-    //         storageBooking[i].times == time
-    //       ) {
-    //         alert("The Tutor not available at this time");
-    //       }
-    //       found = true;
-    //       index = i;
-    //       break;
-    //     }
-    //   }
-    //   if (found) {
-    //     storageBooking[index] = {
-    //       dates: date,
-    //       times: time,
-    //       tutorPrices: tutorPrice,
-    //       tutorName: tutorName,
-    //       id: id,
-    //     };
-    //     localStorage.setItem("bookingDetails", JSON.stringify(storageBooking));
-    //   } else {
-    //     storageBooking.push({
-    //       dates: date,
-    //       times: time,
-    //       tutorPrices: tutorPrice,
-    //       tutorName: tutorName,
-    //       id: id,
-    //     });
-    //     localStorage.setItem("bookingDetails", JSON.stringify(storageBooking));
-    //   }
-    // } else
-    //   localStorage.setItem(
-    //     "bookingDetails",
-    //     JSON.stringify([
-    //       {
-    //         dates: date,
-    //         times: time,
-    //         tutorPrices: tutorPrice,
-    //         tutorName: tutorName,
-    //         id: id,
-    //       },
-    //     ])
-    //   );
   };
   return (
     <div className="Booking-Card">
