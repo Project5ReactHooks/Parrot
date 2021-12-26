@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/manageProfile.css";
+import {UserContext} from "../App"
 
 const ManageProfile = () => {
   let navigate = useNavigate();
+
+  const {setLogged} = useContext(UserContext)
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -44,6 +47,7 @@ const ManageProfile = () => {
   const logOut = ()=>{
  localStorage.setItem("isLoggedIn" , (false))
  localStorage.setItem("loggedAccount", '')
+ setLogged(false)
  navigate("/")
   }
   return (
