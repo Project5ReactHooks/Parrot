@@ -35,6 +35,7 @@
 .booking-img img{
   width: 70%;
   height: 100%;
+  border-radius: 1rem;
 }
 
 .booking-price >p{
@@ -53,6 +54,7 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap:1.5em;
+    margin-bottom: 3em;
 }
 .date-time{
     display: flex;
@@ -68,3 +70,90 @@
  padding:0.5em 1.5em;
 }
 
+@media only screen and (max-width: 767px) {
+    .container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap:1.5em;
+    }
+    .booking-card{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+       }
+       .booking-img{
+        width: 70%;
+        margin: auto;
+        max-height:50% ;
+    }
+    .booking-tutor-desc {
+        width: 100%;
+        margin: auto;
+    }
+        .booking-price{
+            width:70%;
+            margin: auto;
+        }
+        .booking-hero{
+            width: 100%;
+        }
+  }
+  @media only screen and (max-width :768px ){
+    .booking-card{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+       }
+       .booking-img{
+        width: 70%;
+        margin: auto;
+        max-height:50% ;
+    }
+    .booking-tutor-desc {
+        width: 100%;}
+        .booking-price{
+            width: 100%;
+        }
+  }
+  @media only screen and (max-width :1024px ){
+    .booking-card{
+        display: flex;
+        text-align: center;
+       }
+       .booking-img{
+        width: 100%;
+        margin: auto;
+        max-height:50% ;
+    }
+    .booking-tutor-desc {
+        width: 100%;
+    font-size: 1em;}
+        .booking-price{
+            width: 100%;
+            font-size: 1em;
+        }
+        .booking-price h3{
+            font-size: 1em;
+        }
+        .booking-price button{
+            font-size: 0.75em;
+            width: 80%;
+
+        }
+        .booking-tutor-desc p{
+            font-size: 0.8em;
+        }
+  }
+  @media only screen and (max-width :1440px ){
+    .booking-card{
+        display: flex;
+        justify-content:space-between;
+        box-shadow:0 0 20px rgb(0 0 0 / 10%);
+        border-radius: 1em;
+        width: 100%;
+        margin: auto;
+        padding:1.5em 2em;
+       }
+  }
+ 
+ 
