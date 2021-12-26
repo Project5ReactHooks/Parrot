@@ -11,6 +11,10 @@ const ManageProfile = () => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
+    let isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+    if(!isLoggedIn){
+      navigate("/login")
+    }
     let user = JSON.parse(localStorage.getItem("loggedAccount"));
     setUser(user);
   }, []);
