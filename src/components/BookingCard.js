@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Pick from "./PickDate";
 import { BookingContext } from "../pages/Booking";
 function BookingCard(props) {
+  const navigate = useNavigate();
   const { date, setDate, time, setTime } = useContext(BookingContext);
   const { id, tutorImg, tutorName, tutorExp, tutorDes, tutorPrice } =
     props.item;
@@ -16,19 +18,15 @@ function BookingCard(props) {
         )
       : localStorage.setItem("tutorsBookedDetails", JSON.stringify([]));
 
-    // localStorage.getItem("usersReservations")
-    //   ? setUsersReservations(
-    //       JSON.parse(localStorage.getItem("usersReservations"))
-    //     )
-    //   : localStorage.setItem(
-    //       "usersReservations",
-    //       JSON.stringify(usersReservations)
-    //     );
     localStorage.getItem("loggedAccount")
       ? setLoggedUser(JSON.parse(localStorage.getItem("loggedAccount")))
       : setLoggedUser({ email: "guest" });
   }, []);
   const handleBooking = () => {
+    if (loggedUser.email == "guest") {
+      navigate("/login");
+      return;
+    }
     let exist = false;
     let existIndex = null;
     let existDateIndex = null;
@@ -85,15 +83,6 @@ function BookingCard(props) {
           );
 
           alert("Booked Successfully!!");
-          // let testStorageData = localStorage.getItem("test")
-          //   ? JSON.parse(localStorage.getItem("test"))
-          //   : [];
-          // setTest([...testStorageData, "test"]);
-          // localStorage.setItem(
-          //   "test",
-          //   JSON.stringify([...testStorageData, "test"])
-          // );
-          // console.log([...testStorageData, "test"]);
         } else {
           alert("Choose another time");
         }
@@ -130,15 +119,6 @@ function BookingCard(props) {
         );
 
         alert("added successfully");
-        // let testStorageData = localStorage.getItem("test")
-        //   ? JSON.parse(localStorage.getItem("test"))
-        //   : [];
-        // setTest([...testStorageData, "test"]);
-        // localStorage.setItem(
-        //   "test",
-        //   JSON.stringify([...testStorageData, "test"])
-        // );
-        // console.log([...testStorageData, "test"]);
       }
     }
     if (!exist) {
@@ -221,15 +201,6 @@ function BookingCard(props) {
       }
 
       alert("added successfully");
-      let testStorageData = localStorage.getItem("test")
-        ? JSON.parse(localStorage.getItem("test"))
-        : [];
-      setTest([...testStorageData, "test"]);
-      localStorage.setItem(
-        "test",
-        JSON.stringify([...testStorageData, "test"])
-      );
-      console.log([...testStorageData, "test"]);
     }
   };
   return (
