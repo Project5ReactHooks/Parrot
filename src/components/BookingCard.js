@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import Pick from "./PickDate";
 import { BookingContext } from "../pages/Booking";
+import { useNavigate } from "react-router-dom";
 function BookingCard(props) {
+  let navigate = useNavigate();
   const { date, setDate, time, setTime } = useContext(BookingContext);
   const { id, tutorImg, tutorName, tutorExp, tutorDes, tutorPrice } =
     props.item;
+  const [loggedUser, setLoggedUser] = useState({});
   const [tutorsBookedDetails, setTutorsBookedDetails] = useState([]);
   useEffect(() => {
     localStorage.getItem("tutorsBookedDetails")
@@ -12,6 +15,9 @@ function BookingCard(props) {
           JSON.parse(localStorage.getItem("tutorsBookedDetails"))
         )
       : localStorage.setItem("tutorsBookedDetails", JSON.stringify([]));
+    localStorage.getItem("loggedAccount")
+      ? setLoggedUser(JSON.parse(localStorage.getItem("loggedAccount")))
+      : setLoggedUser({ email: "guest" });
   }, []);
   const handleBooking = () => {
     let exist = false;
@@ -45,6 +51,7 @@ function BookingCard(props) {
         });
         if (!existTime) {
           dateObject.times.push(time);
+          dateObject.clients.push(loggedUser.email);
           setTutorsBookedDetails(tutorsBookedDetails);
           localStorage.setItem(
             "tutorsBookedDetails",
@@ -60,6 +67,7 @@ function BookingCard(props) {
         newStateArr[existIndex].bookedDates.push({
           date: date,
           times: [time],
+          clients: [loggedUser.email],
         });
 
         setTutorsBookedDetails(newStateArr);
@@ -77,7 +85,7 @@ function BookingCard(props) {
           tutorName: tutorName,
           tutorId: id,
           tutorPrice: tutorPrice,
-          bookedDates: [{ date: date, times: [time] }],
+          bookedDates: [{ date: date, times: [time], clients: [loggedUser.email] }],
         },
       ]);
       let newArrr;
@@ -91,7 +99,7 @@ function BookingCard(props) {
             tutorName: tutorName,
             tutorId: id,
             tutorPrice: tutorPrice,
-            bookedDates: [{ date: date, times: [time] }],
+            bookedDates: [{ date: date, times: [time], clients: [loggedUser.email] }],
           },
         ];
         localStorage.setItem("tutorsBookedDetails", JSON.stringify(newArrr));
@@ -101,7 +109,7 @@ function BookingCard(props) {
             tutorName: tutorName,
             tutorId: id,
             tutorPrice: tutorPrice,
-            bookedDates: [{ date: date, times: [time] }],
+            bookedDates: [{ date: date, times: [time], clients: [loggedUser.email] }],
           },
         ];
         localStorage.setItem("tutorsBookedDetails", JSON.stringify(newArrr));
