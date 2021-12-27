@@ -6,7 +6,9 @@ const ManageReservations = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     let data = JSON.parse(localStorage.getItem("usersReservations"));
-    setData(data);
+    let user = JSON.parse(localStorage.getItem("loggedAccount"))
+    let filteredData = data.filter((e)=>  e.user == user.email )
+    setData(filteredData);
   }, []);
 
   
