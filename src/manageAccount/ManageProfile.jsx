@@ -2,18 +2,18 @@ import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/manageProfile.css";
-import {UserContext} from "../App"
+import { UserContext } from "../App";
 
 const ManageProfile = () => {
   let navigate = useNavigate();
 
-  const {setLogged} = useContext(UserContext)
+  const { setLogged } = useContext(UserContext);
   const [user, setUser] = useState({});
 
   useEffect(() => {
     let isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
-    if(!isLoggedIn){
-      navigate("/login")
+    if (!isLoggedIn) {
+      navigate("/login");
     }
     let user = JSON.parse(localStorage.getItem("loggedAccount"));
     setUser(user);
@@ -33,42 +33,45 @@ const ManageProfile = () => {
     newImg.img = e.target.value;
     setUser({ ...newImg });
   };
-const handelDefaultImage =()=>{
-  if(user.img){
-    return user.img
-  }else{
-    return "no-user-image.jpg"
-  }
-}
-  const updateUser = (e) => {
-    e.preventDefault()
-    localStorage.setItem("loggedAccount", JSON.stringify(user));
-    let users =JSON.parse(localStorage.getItem('user'))
-    users.map((e)=>{
-      if(e.email == user.email){
-        e.password = user.password
-        e.username = user.username  
-        e.img = user.img
-      }
+  const handelDefaultImage = () => {
+    if (user.img) {
+      return user.img;
+    } else {
+      return "no-user-image.jpg";
     }
-    );
-     localStorage.setItem('user' ,JSON.stringify(users))
   };
-  const logOut = ()=>{
- localStorage.setItem("isLoggedIn" , (false))
- localStorage.setItem("loggedAccount", '')
- setLogged(false)
- navigate("/")
-  }
+  const updateUser = (e) => {
+    e.preventDefault();
+    localStorage.setItem("loggedAccount", JSON.stringify(user));
+    let users = JSON.parse(localStorage.getItem("user"));
+    users.map((e) => {
+      if (e.email == user.email) {
+        e.password = user.password;
+        e.username = user.username;
+        e.img = user.img;
+      }
+    });
+    localStorage.setItem("user", JSON.stringify(users));
+  };
+  const logOut = () => {
+    localStorage.setItem("isLoggedIn", false);
+    localStorage.setItem("loggedAccount", "");
+    setLogged(false);
+    navigate("/");
+  };
   return (
     <section className="manageProfile">
       <div className="profileImage1">
-        <img src={handelDefaultImage()} className="profileImage" />
+        <img
+          src={handelDefaultImage()}
+          className="profileImage"
+          alt="user profile picture"
+        />
       </div>
       <div className="personalInformation">
         <form>
           <div className="accountDiv">
-            <label className='profileLabel'>UserName</label>
+            <label className="profileLabel">UserName</label>
             <br />
             <input
               className="profileInput"
@@ -78,7 +81,7 @@ const handelDefaultImage =()=>{
             />
           </div>
           <div className="accountDiv">
-            <label className='profileLabel'>Password</label>
+            <label className="profileLabel">Password</label>
             <br />
             <input
               className="profileInput"
@@ -88,7 +91,7 @@ const handelDefaultImage =()=>{
             />
           </div>
           <div className="accountDiv">
-            <label className='profileLabel'>Image</label>
+            <label className="profileLabel">Image</label>
             <br />
             <input
               className="profileInput"
@@ -98,7 +101,7 @@ const handelDefaultImage =()=>{
             />
           </div>
           <div className="accountDiv">
-            <label className=''>Email</label>
+            <label className="">Email</label>
             <br />
             <input
               className="profileInput"
@@ -109,8 +112,12 @@ const handelDefaultImage =()=>{
           </div>
 
           <div className="profileBtn1">
-            <button className='profileBtn' onClick={updateUser}>Submit</button>
-            <button className="logOut" onClick={logOut}>Log out</button>
+            <button className="profileBtn" onClick={updateUser}>
+              Submit
+            </button>
+            <button className="logOut" onClick={logOut}>
+              Log out
+            </button>
           </div>
         </form>
       </div>

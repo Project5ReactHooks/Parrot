@@ -30,9 +30,9 @@ function App() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [logged, setLogged] = useState(false);
-  useEffect(()=>{
-    setLogged(JSON.parse(localStorage.getItem("isLoggedIn")) )
-  },[])
+  useEffect(() => {
+    setLogged(JSON.parse(localStorage.getItem("isLoggedIn")));
+  }, []);
   return (
     <div className="appContainer">
       <BrowserRouter>
@@ -48,7 +48,6 @@ function App() {
             setSubmitted,
           }}
         >
-          {/* <Registration /> */}
           <OurNavBar isLoggedIn={logged} />
           <ScrollToTop />
           <Routes>

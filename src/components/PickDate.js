@@ -4,10 +4,6 @@ import { BookingContext } from "../pages/Booking";
 function MyVerticallyCenteredModal(props) {
   const { date, setDate } = useContext(BookingContext);
   const { time, setTime } = useContext(BookingContext);
-  // let test = {
-  //   date: ["2021-12-16","2021-12-15"],
-  //   times: ["01:00-02:00", "03:00-04:00"],
-  // };
   return (
     <Modal
       {...props}
@@ -37,9 +33,6 @@ function MyVerticallyCenteredModal(props) {
           onChange={(e) => setTime(e.target.value)}
           required
         >
-          {/* {test.date.includes(date) && test.times.includes(time) ? (
-            <option value="01:00-02:00">01:00-02:00</option>
-          ) : ( */}
           <>
             <option value="01:00-02:00">01:00-02:00</option>
             <option value="02:00-03:00">02:00-03:00</option>
@@ -47,12 +40,6 @@ function MyVerticallyCenteredModal(props) {
             <option value="04:00-05:00">04:00-05:00</option>
             <option value="05:00-06:00">05:00-06:00</option>
           </>
-          {/* )} */}
-          {/* <option value="01:00-02:00">01:00-02:00</option>
-          <option value="02:00-03:00">02:00-03:00</option>
-          <option value="03:00-04:00">03:00-04:00</option>
-          <option value="04:00-05:00">04:00-05:00</option>
-          <option value="05:00-06:00">04:00-05:00</option> */}
         </select>
       </Modal.Body>
       <Modal.Footer>

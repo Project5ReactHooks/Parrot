@@ -19,7 +19,7 @@ function LandingContactUs() {
         </div>
         <div className="contactContainer">
           <div className="imgContainer">
-            <img src="contact.svg" className="contactImage" />
+            <img src="contact.svg" className="contactImage" alt="contact us image" />
           </div>
           <div className="contactFormContainer">
             <form onSubmit={(e) => handleSubmitContactForm(e)}>
