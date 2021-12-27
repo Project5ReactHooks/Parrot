@@ -2,17 +2,13 @@ import React, { useEffect, useState } from "react";
 import "../style/OurNavBar.css";
 import { Link } from "react-router-dom";
 
-function OurNavBar({isLoggedIn}) {
-
-  
-
+function OurNavBar({ isLoggedIn }) {
   const [toggleNav, setToggleNav] = useState(false);
   let obj = toggleNav
     ? { display: "flex", flexDirection: "column", alignItems: "self-start" }
     : {};
-    
+
   return (
-    
     <nav className="navMainContainer">
       <div className="logoContainer">
         <Link to="/">
@@ -21,7 +17,10 @@ function OurNavBar({isLoggedIn}) {
       </div>
       <ul className="burgerMenu">
         <li>
-          <i class="fas fa-bars" onClick={() => setToggleNav(!toggleNav)}></i>
+          <i
+            className="fas fa-bars"
+            onClick={() => setToggleNav(!toggleNav)}
+          ></i>
         </li>
       </ul>
       <div className="pagesLinks" style={obj}>
@@ -35,19 +34,22 @@ function OurNavBar({isLoggedIn}) {
           <li>
             <Link to="/about">About Us</Link>
           </li>
-        </ul>{!isLoggedIn?
-        <ul>
-          <li>
-            <Link to="/login">Login/Register</Link>
-          </li>
-        </ul>:<ul>
-        <li>
-          <Link to="/account">My Account</Link>
-        </li>
-      </ul>}
+        </ul>
+        {!isLoggedIn ? (
+          <ul>
+            <li>
+              <Link to="/login">Login/Register</Link>
+            </li>
+          </ul>
+        ) : (
+          <ul>
+            <li>
+              <Link to="/account">My Account</Link>
+            </li>
+          </ul>
+        )}
       </div>
     </nav>
-    
   );
 }
 

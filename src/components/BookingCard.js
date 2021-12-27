@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import Pick from "./PickDate";
 import { BookingContext } from "../pages/Booking";
 function BookingCard(props) {
@@ -82,9 +83,19 @@ function BookingCard(props) {
             JSON.stringify(newUsersReservationsArr)
           );
 
-          alert("Booked Successfully!!");
+          Swal.fire({
+            title: "Booked Successfully",
+            text: "Check your profile",
+            icon: "success",
+            confirmButtonText: "Close",
+          });
         } else {
-          alert("Choose another time");
+          Swal.fire({
+            title: "The Tutor Not Available At this Time",
+            text: "Please Choose Another Time",
+            icon: "error",
+            confirmButtonText: "Close",
+          });
         }
       }
       if (!existDate) {
@@ -118,7 +129,12 @@ function BookingCard(props) {
           JSON.stringify(newUsersReservationsArr)
         );
 
-        alert("added successfully");
+        Swal.fire({
+          title: "Booked Successfully",
+          text: "Check your profile",
+          icon: "success",
+          confirmButtonText: "Close",
+        });
       }
     }
     if (!exist) {
@@ -200,7 +216,12 @@ function BookingCard(props) {
         );
       }
 
-      alert("added successfully");
+      Swal.fire({
+        title: "Booked Successfully",
+        text: "Check your profile",
+        icon: "success",
+        confirmButtonText: "Close",
+      });
     }
   };
   return (
