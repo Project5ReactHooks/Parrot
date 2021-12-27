@@ -114,6 +114,12 @@
         .booking-price{
             width: 100%;
         }
+        #date{
+            width: 100%;
+        }
+        #time{
+            width: 100%;
+        }
   }
   @media only screen and (max-width :1024px ){
     .booking-card{
