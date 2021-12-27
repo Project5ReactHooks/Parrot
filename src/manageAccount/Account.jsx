@@ -10,6 +10,7 @@ const Account = () => {
   let navigate = useNavigate();
   const [active , setActive] = useState('ManageProfile')
   useEffect(() => {
+    window.scrollTo(0,0)
     let isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
     if(!isLoggedIn){
       navigate("/login")

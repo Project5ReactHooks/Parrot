@@ -51,7 +51,7 @@ function Login(props) {
           img: checkUser[0].img,
         })
       );
-      navigate("/");
+      navigate("/findtutor");
     } else {
       Swal.fire({
         icon: "error",

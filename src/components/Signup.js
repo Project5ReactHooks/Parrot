@@ -61,7 +61,7 @@ function Signup(props) {
       );
       setSubmitted(true);
       setLogged(true);
-      navigate("/");
+      navigate("/findtutor");
     }
   };
 

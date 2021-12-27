@@ -16,7 +16,7 @@ function BookingCardInfo() {
     {
       id: 2,
       tutorImg: "tutor2.jpg",
-      tutorName: "Rahaf",
+      tutorName: "Ghassan",
       tutorExp: 8,
       tutorDes:
         "Hello!my hobbies are drawing ,playing video games and I really love teaching :)",
@@ -25,7 +25,7 @@ function BookingCardInfo() {
     {
       id: 3,
       tutorImg: "tutor7.jpg",
-      tutorName: "Azooz",
+      tutorName: "Khadeejah",
       tutorExp: 10,
       tutorDes:
         "Hello!my hobbies are drawing ,playing video games and I really love teaching :)",
@@ -70,7 +70,7 @@ function BookingCardInfo() {
     {
       id: 8,
       tutorImg: "tutor1.jpg",
-      tutorName: "Yaser",
+      tutorName: "Fatima",
       tutorExp: 7,
       tutorDes:
         "Hello!my hobbies are drawing ,playing video games and I really love teaching :)",

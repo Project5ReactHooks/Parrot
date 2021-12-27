@@ -13,6 +13,7 @@ function BookingCard(props) {
   const [tutorsBookedDetails, setTutorsBookedDetails] = useState([]);
   const [usersReservations, setUsersReservations] = useState([]);
   useEffect(() => {
+    window.scrollTo(0,0)
     localStorage.getItem("tutorsBookedDetails")
       ? setTutorsBookedDetails(
           JSON.parse(localStorage.getItem("tutorsBookedDetails"))

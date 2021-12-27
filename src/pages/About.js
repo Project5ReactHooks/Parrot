@@ -7,7 +7,13 @@ import man1 from "../asset/man1.jpeg";
 import man2 from "../asset/man2.jpg";
 import man3 from "../asset/pexels.jpeg";
 import man4 from "../asset/pexels-1.jpg";
+import { useEffect } from "react";
+
 function About(props) {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+   
+  },[])
   return (
     <div className="allAbout">
       <div className="about">
