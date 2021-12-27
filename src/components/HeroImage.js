@@ -1,9 +1,15 @@
 import React from "react";
 import '../style/HeroImage.css'
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
 
 
 function HeroImage() {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+   
+  },[])
   return (
     <div className="heroImageContainer">
 

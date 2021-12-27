@@ -4,8 +4,8 @@
   margin-top: 3em;
 }
 .profileImage {
-  width: 80%;
-  height: 26em;
+  max-width: 75%;
+  min-height: 25em;
   border-radius: 50px;
 }
 .personalInformation {
