@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { UserContext } from "../App";
 import "../style/Login.css";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function Login(props) {
   let navigate = useNavigate();
@@ -52,7 +53,11 @@ function Login(props) {
       );
       navigate("/");
     } else {
-      alert("incorrect email or password ");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Email or Password is incorrect",
+      });
     }
   };
   return (
