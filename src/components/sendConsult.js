@@ -1,11 +1,20 @@
 import { React, useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
+import Swal from "sweetalert2";
+
 export default function Example() {
   const [show, setShow] = useState(false);
+  const [emailInput, setEmailInput] = useState("");
+  const [usernameInput, setUsernameInput] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  function handleSubmit() {
+    Swal.fire({
+      icon: "success",
+      text: "Your request has been successfully registered ",
+    });
+  }
   return (
     <>
       <Button
@@ -21,19 +30,22 @@ export default function Example() {
           <Modal.Title>Consultation Form</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {" "}
           <Form>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Name"
+                onChange={(e) => setUsernameInput(e.target.value)}
+              />
+            </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                onChange={(e) => setEmailInput(e.target.value)}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Phone Number</Form.Label>
@@ -47,8 +59,9 @@ export default function Example() {
           </Button>
           <Button
             variant="primary"
-            onClick={handleClose}
+            onClick={handleSubmit}
             className="sendConsult-btn-color"
+            disabled={!emailInput.length || !usernameInput.length}
           >
             Submit
           </Button>
