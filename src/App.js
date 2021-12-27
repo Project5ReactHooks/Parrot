@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState, createContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./style/App.css";
@@ -30,6 +30,9 @@ function App() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [logged, setLogged] = useState(false);
+  useEffect(()=>{
+    setLogged(JSON.parse(localStorage.getItem("isLoggedIn")) )
+  },[])
   return (
     <div className="appContainer">
       <BrowserRouter>

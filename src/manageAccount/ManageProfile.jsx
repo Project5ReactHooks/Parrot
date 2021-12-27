@@ -33,7 +33,13 @@ const ManageProfile = () => {
     newImg.img = e.target.value;
     setUser({ ...newImg });
   };
-
+const handelDefaultImage =()=>{
+  if(user.img){
+    return user.img
+  }else{
+    return "no-user-image.jpg"
+  }
+}
   const updateUser = (e) => {
     e.preventDefault()
     localStorage.setItem("loggedAccount", JSON.stringify(user));
@@ -57,7 +63,7 @@ const ManageProfile = () => {
   return (
     <section className="manageProfile">
       <div className="profileImage1">
-        <img src={user.img} className="profileImage" />
+        <img src={handelDefaultImage()} className="profileImage" />
       </div>
       <div className="personalInformation">
         <form>

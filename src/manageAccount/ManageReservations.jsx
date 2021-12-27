@@ -11,9 +11,13 @@ const ManageReservations = () => {
 
   const handelDelete = (reservation ,index) => {
     let test = JSON.parse(localStorage.getItem("usersReservations"));
-    let nweReservation = test.filter((el) => el !== test[index])
-    setData(nweReservation);
-    localStorage.setItem("usersReservations", JSON.stringify(nweReservation));
+    let newReservation = test.filter((el) => el !== test[index])
+    localStorage.setItem("usersReservations", JSON.stringify(newReservation));
+
+    let test2 = JSON.parse(localStorage.getItem("tutorsBookedDetails"));
+    let newReservation2 = test2.filter((el) => el !== test2[index])
+    localStorage.setItem("tutorsBookedDetails", JSON.stringify(newReservation2));
+    setData(newReservation);
   };
   return data?.length ? (
     <section>

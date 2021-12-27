@@ -26,6 +26,9 @@
 .linkAccount:hover {
   color: var(--teal);
 }
+.dynamic {
+  border-bottom: 3px solid var(--teal);
+}
 @media screen and (max-width: 800px) {
   .account {
     width: 100%;
