@@ -13,7 +13,7 @@ function LandingGuidOneStep({num,stepTitle,stepDesc,imgLink}) {
       <div className="imageContainer">
         <img
           src={imgLink}
-          alt="step image"
+          alt="step"
         />
       </div>
     </div>

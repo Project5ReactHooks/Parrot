@@ -65,7 +65,7 @@ const ManageProfile = () => {
         <img
           src={handelDefaultImage()}
           className="profileImage"
-          alt="user profile picture"
+          alt="user profile"
         />
       </div>
       <div className="personalInformation">

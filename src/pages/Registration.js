@@ -32,11 +32,11 @@ function Registration() {
             setlogin_register={setlogin_register}
             login_register={login_register}
           />
-          <img src="signup1.png" className="signup-img" alt="sign up image"></img>
+          <img src="signup1.png" className="signup-img" alt="sign up"></img>
         </div>
       ) : (
         <div className="login-App">
-          <img src="login1.png" className="login-img" alt="login form image"></img>
+          <img src="login1.png" className="login-img" alt="login form"></img>
           <Login
             setlogin_register={setlogin_register}
             login_register={login_register}

@@ -19,7 +19,7 @@ function Booking() {
           teachers with an average rating of 4.88 out of 5 stars given by 69417
           customers.
         </p>
-        <img src="hero.png" alt='hero image' className="booking-hero" />
+        <img src="hero.png" alt='hero' className="booking-hero" />
       </div>
       <BookingContext.Provider value={{ date, setDate, time, setTime }}>
         <BookingCardInfo />

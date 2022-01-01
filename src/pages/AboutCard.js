@@ -6,7 +6,7 @@ function AboutCard(props) {
     <div>
       <div className="About-Card">
         <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={props.Img} alt="team member pic" />
+          <Card.Img variant="top" src={props.Img} alt="team member" />
           <Card.Body>
             <Card.Title>{props.name}</Card.Title>
             <Card.Text>
