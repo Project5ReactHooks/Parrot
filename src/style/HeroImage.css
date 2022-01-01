@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   background-image: url("https://static.preply.com/static/ssr/_next/static/images/tutor-1600-000ab8ac339c24bd121c6338f104daf8.webp");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -52,7 +53,7 @@
     max-width: 100%;
 
   }
-  .heroImageContainer .actionArea p, .heroImageContainer .actionArea h2,.heroImageContainer .actionArea button{
+  .heroImageContainer .actionArea p, .heroImageContainer .actionArea h2,.heroImageContainer .actionArea a{
     margin: 10px auto;
   }
  

@@ -45,11 +45,12 @@
     margin: 1em;
   }
   .profileImage {
-    width: 180px;
-    height: 11em;
+    /* width: 180px; */
+    min-height: 3em;
   }
   .profileImage1 {
     margin: 0 auto 2em;
+    text-align: center;
   }
   .profileBtn1 {
     display: flex;
