@@ -45,7 +45,7 @@ const ManageProfile = () => {
     localStorage.setItem("loggedAccount", JSON.stringify(user));
     let users = JSON.parse(localStorage.getItem("user"));
     users.map((e) => {
-      if (e.email == user.email) {
+      if (e.email === user.email) {
         e.password = user.password;
         e.username = user.username;
         e.img = user.img;

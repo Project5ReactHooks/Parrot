@@ -25,7 +25,7 @@ function BookingCard(props) {
       : setLoggedUser({ email: "guest" });
   }, []);
   const handleBooking = () => {
-    if (loggedUser.email == "guest") {
+    if (loggedUser.email === "guest") {
       navigate("/login");
       return;
     }
@@ -43,7 +43,7 @@ function BookingCard(props) {
     if (exist) {
       let existDate = false;
       tutorsBookedDetails[existIndex].bookedDates.forEach((item, index) => {
-        if (item.date == date) {
+        if (item.date === date) {
           existDate = true;
           existDateIndex = index;
         }
@@ -53,7 +53,7 @@ function BookingCard(props) {
         let dateObject =
           tutorsBookedDetails[existIndex].bookedDates[existDateIndex];
         dateObject.times.forEach((item, index) => {
-          if (item == time) {
+          if (item === time) {
             existTime = true;
             existTimeIndex = index;
           }

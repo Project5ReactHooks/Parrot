@@ -43,7 +43,7 @@ function MyVerticallyCenteredModal(props) {
         </select>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.handleBooking} disabled={date == "empty"}>
+        <Button onClick={props.handleBooking} disabled={date === "empty"}>
           {localStorage.getItem("loggedAccount")
             ? "Confirm Booking"
             : "Login To Book"}

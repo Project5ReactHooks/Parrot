@@ -29,12 +29,12 @@ const Account = () => {
       <div className="navBarAccount">
         <ul className="navAccount">
           <li>
-            <Link to="/account" className={"linkAccount " + (active=='ManageProfile'? 'dynamic':"")} onClick={dynamicProfile}>
+            <Link to="/account" className={"linkAccount " + (active==='ManageProfile'? 'dynamic':"")} onClick={dynamicProfile}>
               Profile
             </Link>
           </li>
           <li>
-            <Link to="/account/ManageReservations" className={"linkAccount " +(active=='ManageReservation'? 'dynamic':"")} onClick={dynamicReservation}>
+            <Link to="/account/ManageReservations" className={"linkAccount " +(active==='ManageReservation'? 'dynamic':"")} onClick={dynamicReservation}>
               Reservations
             </Link>
           </li>
