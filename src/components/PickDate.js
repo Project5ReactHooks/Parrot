@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { BookingContext } from "../pages/Booking";
 function MyVerticallyCenteredModal(props) {

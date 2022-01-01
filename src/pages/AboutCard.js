@@ -1,5 +1,5 @@
 import React from "react";
-import about from "../style/About.css";
+import "../style/About.css";
 import Card from "react-bootstrap/Card";
 function AboutCard(props) {
   return (

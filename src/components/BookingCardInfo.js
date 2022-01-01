@@ -3,7 +3,7 @@ import BookingCard from "./BookingCard";
 import "../style/Booking.css";
 
 function BookingCardInfo() {
-  const [booking, setBooking] = useState([
+  const [booking] = useState([
     {
       id: 1,
       tutorImg: "tutor1.jpg",
@@ -77,7 +77,7 @@ function BookingCardInfo() {
       tutorPrice: 50,
     },
   ]);
-  const bookedArrFromStorage=(localStorage.getItem("bookingDetails")?JSON.parse(localStorage.getItem("bookingDetails")):"TEST");
+  // const bookedArrFromStorage=(localStorage.getItem("bookingDetails")?JSON.parse(localStorage.getItem("bookingDetails")):"TEST");
 
   return (
     <div className="container">

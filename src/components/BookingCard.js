@@ -5,11 +5,10 @@ import Pick from "./PickDate";
 import { BookingContext } from "../pages/Booking";
 function BookingCard(props) {
   const navigate = useNavigate();
-  const { date, setDate, time, setTime } = useContext(BookingContext);
+  const { date,  time  } = useContext(BookingContext);
   const { id, tutorImg, tutorName, tutorExp, tutorDes, tutorPrice } =
     props.item;
   const [loggedUser, setLoggedUser] = useState({});
-  const [test, setTest] = useState([]);
   const [tutorsBookedDetails, setTutorsBookedDetails] = useState([]);
   const [usersReservations, setUsersReservations] = useState([]);
   useEffect(() => {
@@ -32,7 +31,7 @@ function BookingCard(props) {
     let exist = false;
     let existIndex = null;
     let existDateIndex = null;
-    let existTimeIndex = null;
+    // let existTimeIndex = null;
 
     for (let i = 0; i < tutorsBookedDetails.length; i++) {
       if (tutorsBookedDetails[i].tutorName === tutorName) {
@@ -55,7 +54,7 @@ function BookingCard(props) {
         dateObject.times.forEach((item, index) => {
           if (item === time) {
             existTime = true;
-            existTimeIndex = index;
+            // existTimeIndex = index;
           }
         });
         if (!existTime) {
@@ -211,6 +210,10 @@ function BookingCard(props) {
         });
         setUsersReservations(newUsersReservationsArr);
 
+        localStorage.setItem(
+          "usersReservations",
+          JSON.stringify(usersReservations)
+        );
         localStorage.setItem(
           "usersReservations",
           JSON.stringify(newUsersReservationsArr)

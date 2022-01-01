@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../style/navAccount.css";
 import { useEffect } from "react";

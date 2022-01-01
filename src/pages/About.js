@@ -1,5 +1,5 @@
 import React from "react";
-import about from "../style/About.css";
+import "../style/About.css";
 import AboutCard from "./AboutCard";
 import backpack_girl from "../asset/backpack_girl.png";
 import boyWithBlueBackground from "../asset/boyWithBlueBackground.png";
