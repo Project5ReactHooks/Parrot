@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from "react";
 import "../style/reservation.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 const ManageReservations = () => {
   const [data, setData] = useState([]);
+  const navigate=useNavigate();
   useEffect(() => {
+    let isLoggedIn = localStorage.getItem("isLoggedIn")
+      ? JSON.parse(localStorage.getItem("isLoggedIn"))
+      : "";
+    if (!isLoggedIn) {
+      navigate("/login");
+      return;
+    }
     let data = JSON.parse(localStorage.getItem("usersReservations"));
-    let user = JSON.parse(localStorage.getItem("loggedAccount"))
-    let filteredData = data.filter((e)=>  e.user === user.email )
+    let user = JSON.parse(localStorage.getItem("loggedAccount"));
+    let filteredData = data.filter((e) => e.user === user.email);
     setData(filteredData);
-  }, []);
+  }, [navigate]);
 
-  
   return data?.length ? (
     <section>
       <table className="reservationLeft">

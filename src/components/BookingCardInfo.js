@@ -77,7 +77,7 @@ function BookingCardInfo() {
       tutorPrice: 50,
     },
   ]);
-  // const bookedArrFromStorage=(localStorage.getItem("bookingDetails")?JSON.parse(localStorage.getItem("bookingDetails")):"TEST");
+  
 
   return (
     <div className="container">

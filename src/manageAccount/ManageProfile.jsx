@@ -11,13 +11,18 @@ const ManageProfile = () => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    let isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+    let isLoggedIn = localStorage.getItem("isLoggedIn")
+      ? JSON.parse(localStorage.getItem("isLoggedIn"))
+      : "";
     if (!isLoggedIn) {
       navigate("/login");
+      return;
     }
-    let user = JSON.parse(localStorage.getItem("loggedAccount"));
+    let user = localStorage.getItem("loggedAccount")
+      ? JSON.parse(localStorage.getItem("loggedAccount"))
+      : {};
     setUser(user);
-  }, []);
+  }, [navigate]);
   const handelUserName = (e) => {
     let newUser = user;
     newUser.username = e.target.value;
@@ -44,7 +49,7 @@ const ManageProfile = () => {
     e.preventDefault();
     localStorage.setItem("loggedAccount", JSON.stringify(user));
     let users = JSON.parse(localStorage.getItem("user"));
-    users.map((e) => {
+    users.forEach((e) => {
       if (e.email === user.email) {
         e.password = user.password;
         e.username = user.username;

@@ -31,7 +31,11 @@ function App() {
   const [submitted, setSubmitted] = useState(false);
   const [logged, setLogged] = useState(false);
   useEffect(() => {
-    setLogged(JSON.parse(localStorage.getItem("isLoggedIn")));
+    setLogged(
+      localStorage.getItem("isLoggedIn")
+        ? JSON.parse(localStorage.getItem("isLoggedIn"))
+        : false
+    );
   }, []);
   return (
     <div className="appContainer">
