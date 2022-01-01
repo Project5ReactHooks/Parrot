@@ -40,15 +40,15 @@ function Footer() {
             <h3>Follow Us</h3>
           </div>
           <div className="footerColLinks">
-            <a href="https://web.facebook.com/" target="_blank">
+            <a href="https://web.facebook.com/" target="_blank" rel="noreferrer">
               <i className="fab fa-facebook-square fa-3x"></i>
             </a>
-            <a href="https://www.instagram.com/" target="_blank">
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
               <i className="fab fa-instagram-square fa-3x"></i>
             </a>
             <a
               href="https://github.com/Project5ReactHooks/Parrot"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               <i className="fab fa-github-square fa-3x"></i>
             </a>
