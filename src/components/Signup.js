@@ -77,7 +77,7 @@ function Signup(props) {
               id="1"
               name="username"
               type="text"
-              value={userSignupInformation.username}
+              value={userSignupInformation.username || ""}
               onChange={handleChange}
               required
             />
@@ -89,7 +89,7 @@ function Signup(props) {
               id="2"
               name="email"
               type="email"
-              value={userSignupInformation.email}
+              value={userSignupInformation.email || ""}
               onChange={handleChange}
               required
             />
@@ -106,7 +106,7 @@ function Signup(props) {
               id="3"
               name="password"
               type="password"
-              value={userSignupInformation.password}
+              value={userSignupInformation.password || ""}
               onChange={handleChange}
               required
             />
@@ -125,7 +125,7 @@ function Signup(props) {
               id="4"
               name="repeatPassword"
               type="password"
-              value={userSignupInformation.repeatPassword}
+              value={userSignupInformation.repeatPassword || ""}
               onChange={handleChange}
               required
             />
@@ -141,7 +141,7 @@ function Signup(props) {
             id="5"
             name="img"
             type="text"
-            value={userSignupInformation.img}
+            value={userSignupInformation.img || ""}
             onChange={handleChange}
           />
           <p className="Login-p">

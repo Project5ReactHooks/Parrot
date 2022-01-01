@@ -81,7 +81,7 @@ const ManageProfile = () => {
             <input
               className="profileInput"
               type="text"
-              value={user.username}
+              value={user.username|| ""}
               onChange={(event) => handelUserName(event)}
             />
           </div>
@@ -91,7 +91,7 @@ const ManageProfile = () => {
             <input
               className="profileInput"
               type="password"
-              value={user.password}
+              value={user.password || ""}
               onChange={(event) => handelPassword(event)}
             />
           </div>
@@ -101,7 +101,7 @@ const ManageProfile = () => {
             <input
               className="profileInput"
               type="text"
-              value={user.img}
+              value={user.img || ""}
               onChange={(event) => handelImage(event)}
             />
           </div>
@@ -112,7 +112,7 @@ const ManageProfile = () => {
               className="profileInput"
               type="email"
               disabled
-              value={user.email}
+              value={user.email || ""}
             />
           </div>
 
