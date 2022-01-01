@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 function OurNavBar({ isLoggedIn }) {
   const [toggleNav, setToggleNav] = useState(false);
   let obj = toggleNav
-    ? { display: "flex", flexDirection: "column", alignItems: "self-start" }
+    ? { display: "flex", flexDirection: "column" }
     : {};
 
   return (
     <nav className="navMainContainer">
       <div className="logoContainer">
-        <Link to="/">
+        <Link to="/" onClick={() => setToggleNav(false)}>
           <h1>Parrot</h1>
         </Link>
       </div>
@@ -26,25 +26,35 @@ function OurNavBar({ isLoggedIn }) {
       <div className="pagesLinks" style={obj}>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={() => setToggleNav(false)}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/findtutor">Find Tutor</Link>
+            <Link to="/findtutor" onClick={() => setToggleNav(false)}>
+              Find Tutor
+            </Link>
           </li>
           <li>
-            <Link to="/about">About Us</Link>
+            <Link to="/about" onClick={() => setToggleNav(false)}>
+              About Us
+            </Link>
           </li>
         </ul>
         {!isLoggedIn ? (
           <ul>
             <li>
-              <Link to="/login">Login/Register</Link>
+              <Link to="/login" onClick={() => setToggleNav(false)}>
+                Login/Register
+              </Link>
             </li>
           </ul>
         ) : (
           <ul>
             <li>
-              <Link to="/account">My Account</Link>
+              <Link to="/account" onClick={() => setToggleNav(false)}>
+                My Account
+              </Link>
             </li>
           </ul>
         )}
