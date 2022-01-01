@@ -45,6 +45,9 @@ const ManageProfile = () => {
       return "no-user-image.jpg";
     }
   };
+  const addDefaulImage = (e) => {
+    e.target.src = "no-user-image.jpg";
+  };
   const updateUser = (e) => {
     e.preventDefault();
     localStorage.setItem("loggedAccount", JSON.stringify(user));
@@ -69,6 +72,7 @@ const ManageProfile = () => {
       <div className="profileImage1">
         <img
           src={handelDefaultImage()}
+          onError={(e) => addDefaulImage(e)}
           className="profileImage"
           alt="user profile"
         />
@@ -81,7 +85,7 @@ const ManageProfile = () => {
             <input
               className="profileInput"
               type="text"
-              value={user.username|| ""}
+              value={user.username || ""}
               onChange={(event) => handelUserName(event)}
             />
           </div>
